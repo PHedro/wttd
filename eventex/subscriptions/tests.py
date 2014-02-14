@@ -11,3 +11,12 @@ class SubscribeTest(TestCase):
 
     def test_template(self):
         self.assertTemplateUsed(self.response, 'subscriptions/subscription_form.html')
+
+    def test_html(self):
+        response = self.response
+        self.assertContains(response, '<form')
+        self.assertContains(response, '</form>')
+        self.assertContains(response, '<input', 5)
+        self.assertContains(response, 'type="text"', 3)
+        self.assertContains(response, 'type="email"')
+        self.assertContains(response, 'type="submit"')
