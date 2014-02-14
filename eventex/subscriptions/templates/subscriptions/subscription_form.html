@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+{% block content %}
 <h1>Inscrição</h1>
 <form action="." method="POST">
     {% csrf_token %}
@@ -12,3 +14,4 @@
     {{ form.phone }}
     <input class="btn btn-primary" type="submit" value="Enviar!"/>
 </form>
+{% endblock content %}
