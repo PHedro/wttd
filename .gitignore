@@ -1,1 +1,15 @@
-/home/phedro/Projects/python/wttd/.gitignore
+bin
+build
+include
+lib
+local
+man
+share
+Scripts
+.Python
+*.pyc
+*~
+*.sqlite3
+.DS_Store
+.idea
+.env
