@@ -1,5 +1,6 @@
 <h1>Inscrição</h1>
 <form action="." method="POST">
+    {% csrf_token %}
     <input id="id_name" class="form-control" type="text" name="name" maxlength="100" placeholder="Nome"/>
     <input id="id_cpf" class="form-control" type="text" name="cpf" maxlength="11" placeholder="CPF"/>
     <input id="id_email" class="form-control" type="email" name="email" maxlength="255" placeholder="e-mail"/>
