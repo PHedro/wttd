@@ -1,1 +1,1 @@
-/home/phedro/Projects/python/wttd/Procfile
+web: gunicorn eventex.wsgi
