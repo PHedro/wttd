@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eventex</title>
+    <link type="text/css" href="{{ STATIC_URL }}css/bootstrap.css"
+          rel="stylesheet" media="screen">
+    <link type="text/css" href="{{ STATIC_URL }}css/bootstrap-theme.css"
+          rel="stylesheet" media="screen">
+    <link type="text/css" href="{{ STATIC_URL }}css/style.css" rel="stylesheet"
+          media="screen">
+
+    <script src="{{ STATIC_URL }}js/bootstrap.js"></script>
+</head>
+<body>
+<div class="site-wrapper">
+    <div class="site-wrapper-inner">
+        <div class="cover-container">
+
+            <div class="masthead clearfix">
+                <div class="inner">
+                    <h3 class="masthead-brand">Eventex</h3>
+                    <ul class="nav masthead-nav">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="eventex@eventex.com">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="content" class="inner cover">
+                {% block content %}
+                {% endblock content %}
+            </div>
+
+            <div class="mastfoot">
+                <div class="inner">
+                    ;)
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
