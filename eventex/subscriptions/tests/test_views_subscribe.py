@@ -43,3 +43,17 @@ class SubscribePostTest(TestCase):
 
     def test_save(self):
         self.assertTrue(Subscription.objects.exists())
+
+
+class SubscribeInvalidPostTest(TestCase):
+    def setUp(self):
+        data = dict(
+            name='Teste',
+            cpf='123456789012',
+            email='teste@teste.com',
+            phone='21-999998888'
+        )
+        self.response = self.client.post('/inscricao/', data)
+
+    def test_post(self):
+        self.assertEqual(200, self.response.status_code)

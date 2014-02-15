@@ -5,6 +5,7 @@ from eventex.subscriptions.models import Subscription
 
 
 def subscribe(request):
+    form = SubscriptionForm()
     if request.method == 'POST':
         form = SubscriptionForm(request.POST)
 
@@ -12,9 +13,11 @@ def subscribe(request):
             form.full_clean()
             subscription = Subscription(**form.cleaned_data)
             subscription.save()
-            return HttpResponseRedirect('/inscricao/%d/' % subscription.pk)
+            return HttpResponseRedirect(
+                '/inscricao/%d/' % subscription.pk
+            )
     return render(
         request,
         'subscriptions/subscription_form.html',
-        {'form': SubscriptionForm()}
+        {'form': form}
     )
