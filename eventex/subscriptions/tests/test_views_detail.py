@@ -30,3 +30,9 @@ class DetailTest(TestCase):
 
     def test_html(self):
         self.assertContains(self.response, 'Teste')
+
+
+class DetailNotFound(TestCase):
+    def test_not_found(self):
+        response = self.client.get('/inscricao/0/')
+        self.assertEqual(404, response.status_code)
