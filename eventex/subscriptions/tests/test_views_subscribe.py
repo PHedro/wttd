@@ -57,3 +57,9 @@ class SubscribeInvalidPostTest(TestCase):
 
     def test_post(self):
         self.assertEqual(200, self.response.status_code)
+
+    def test_form_errors(self):
+        self.assertTrue(self.response.context['form'].errors)
+
+    def test_dont_save(self):
+        self.assertFalse(Subscription.objects.exists())
