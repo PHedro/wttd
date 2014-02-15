@@ -1,20 +1,55 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="_form">
+    <div class="row _form">
         <h1>Inscrição</h1>
 
-        <form action="." method="POST">
-            {% csrf_token %}
-            {{ form.name.errors }}
-            {{ form.cpf.errors }}
-            {{ form.email.errors }}
-            {{ form.phone.errors }}
-
-            {{ form.name }}
-            {{ form.cpf }}
-            {{ form.email }}
-            {{ form.phone }}
-            <input class="btn btn-primary" type="submit" value="Enviar!"/>
-        </form>
+        <div class="col-md-12">
+            <form action="." method="POST">
+                <div class="row">
+                    {% csrf_token %}
+                    {{ form.name.errors }}
+                    {{ form.cpf.errors }}
+                    {{ form.email.errors }}
+                    {{ form.phone.errors }}
+                </div>
+                <div class="row">
+                    <div class="form-row">
+                        <span>
+                            {{ form.name.label }}
+                        </span>
+                        {{ form.name }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-row">
+                        <span>
+                            {{ form.cpf.label }}
+                        </span>
+                        {{ form.cpf }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-row">
+                        <span>
+                            {{ form.email.label }}
+                        </span>
+                        {{ form.email }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-row">
+                        <span>
+                            {{ form.phone.label }}
+                        </span>
+                        {{ form.phone }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-row">
+                        <input class="btn btn-primary" type="submit" value="Enviar!"/>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 {% endblock content %}

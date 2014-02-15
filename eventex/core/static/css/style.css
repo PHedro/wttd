@@ -127,3 +127,29 @@ body {
     width: 700px;
   }
 }
+
+input {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    color: #000000;
+    padding: 5px;
+    width: 200px;
+    float: right;
+}
+
+.form-row {
+    width: 300px;
+    margin: 10px auto;
+}
+
+.row > .form-row > span {
+    padding-top: 10px;
+    float: left;
+    width: 50px;
+    text-align: left;
+}
+.btn {
+    width: 120px;
+    float: right;
+    margin: 0;
+}
