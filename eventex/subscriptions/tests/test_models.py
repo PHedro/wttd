@@ -42,3 +42,12 @@ class SubscriptionUniqueTest(TestCase):
             phone='21-999998888'
         )
         self.assertRaises(IntegrityError, subscription.save)
+
+    def test_email_unique(self):
+        subscription = Subscription(
+            name='Teste',
+            cpf='12345678921',
+            email='teste@teste.com',
+            phone='21-999998888'
+        )
+        self.assertRaises(IntegrityError, subscription.save)
