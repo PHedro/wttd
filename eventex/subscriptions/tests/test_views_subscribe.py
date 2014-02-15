@@ -1,6 +1,7 @@
 # coding: utf-8
 from django.test import TestCase
 from eventex.subscriptions.forms import SubscriptionForm
+from eventex.subscriptions.models import Subscription
 
 
 class SubscribeTest(TestCase):
@@ -39,3 +40,6 @@ class SubscribePostTest(TestCase):
 
     def test_post(self):
         self.assertEqual(302, self.response.status_code)
+
+    def test_save(self):
+        self.assertTrue(Subscription.objects.exists())
