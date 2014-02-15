@@ -23,3 +23,7 @@ class DetailTest(TestCase):
             self.response,
             'subscriptions/subscription_detail.html'
         )
+
+    def test_context(self):
+        subscription = self.response.context['subscription']
+        self.assertIsInstance(subscription, Subscription)
