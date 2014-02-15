@@ -34,4 +34,4 @@ def create(request):
 
 
 def detail(request, pk):
-    return HttpResponse()
+    return render(request, 'subscriptions/subscription_detail.html')
