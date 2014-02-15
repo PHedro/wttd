@@ -1,4 +1,4 @@
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 from eventex.subscriptions.forms import SubscriptionForm
 
@@ -31,3 +31,7 @@ def create(request):
     return HttpResponseRedirect(
         '/inscricao/%d/' % subscription.pk
     )
+
+
+def detail(request, pk):
+    return HttpResponse()
