@@ -148,7 +148,7 @@ input {
     width: 50px;
     text-align: left;
 }
-.btn {
+.row > .form-row > .btn {
     width: 120px;
     float: right;
     margin: 0;
