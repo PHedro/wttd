@@ -25,3 +25,17 @@ class SubscribeTest(TestCase):
     def test_has_form(self):
         form = self.response.context['form']
         self.assertIsInstance(form, SubscriptionForm)
+
+
+class SubscribePostTest(TestCase):
+    def setUp(self):
+        data = dict(
+            name='Teste',
+            cpf='12345678901',
+            email='teste@teste.com',
+            phone='21-999998888'
+        )
+        self.response = self.client.post('/inscricao/', data)
+
+    def test_post(self):
+        self.assertEqual(302, self.response.status_code)
