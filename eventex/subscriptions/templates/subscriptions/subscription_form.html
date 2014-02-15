@@ -1,17 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Inscrição</h1>
-<form action="." method="POST">
-    {% csrf_token %}
-    {{ form.name.errors }}
-    {{ form.cpf.errors }}
-    {{ form.email.errors }}
-    {{ form.phone.errors }}
+    <div class="_form">
+        <h1>Inscrição</h1>
 
-    {{ form.name }}
-    {{ form.cpf }}
-    {{ form.email }}
-    {{ form.phone }}
-    <input class="btn btn-primary" type="submit" value="Enviar!"/>
-</form>
+        <form action="." method="POST">
+            {% csrf_token %}
+            {{ form.name.errors }}
+            {{ form.cpf.errors }}
+            {{ form.email.errors }}
+            {{ form.phone.errors }}
+
+            {{ form.name }}
+            {{ form.cpf }}
+            {{ form.email }}
+            {{ form.phone }}
+            <input class="btn btn-primary" type="submit" value="Enviar!"/>
+        </form>
+    </div>
 {% endblock content %}
