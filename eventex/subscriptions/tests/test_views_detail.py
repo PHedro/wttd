@@ -27,3 +27,6 @@ class DetailTest(TestCase):
     def test_context(self):
         subscription = self.response.context['subscription']
         self.assertIsInstance(subscription, Subscription)
+
+    def test_html(self):
+        self.assertContains(self.response, 'Teste')
