@@ -16,6 +16,9 @@ class SubscriptionTest(TestCase):
             phone='21999998888'
         )
 
+    def test_unicode(self):
+        self.assertEqual(u'Teste', unicode(self.subscription))
+
     def test_create(self):
         self.subscription.save()
         self.assertEqual(1, self.subscription.pk)
