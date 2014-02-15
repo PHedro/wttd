@@ -25,8 +25,3 @@ class SubscribeTest(TestCase):
     def test_has_form(self):
         form = self.response.context['form']
         self.assertIsInstance(form, SubscriptionForm)
-
-    def test_form_fields(self):
-        expected_items = ['name', 'email', 'cpf', 'phone']
-        form = self.response.context['form']
-        self.assertItemsEqual(expected_items, form.fields)
