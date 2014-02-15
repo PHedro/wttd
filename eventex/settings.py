@@ -21,11 +21,11 @@ BASE_DIR =Path(__file__).parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=False, cast=bool )
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'http://wttdphedro.herokuapp.com/']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'wttdphedro.herokuapp.com']
 
 
 # Application definition
