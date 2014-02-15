@@ -4,17 +4,30 @@ from eventex.subscriptions.forms import SubscriptionForm
 
 
 def subscribe(request):
-    form = SubscriptionForm()
     if request.method == 'POST':
-        form = SubscriptionForm(request.POST)
+        return create(request)
+    else:
+        return new(request)
 
-        if form.is_valid():
-            subscription = form.save()
-            return HttpResponseRedirect(
-                '/inscricao/%d/' % subscription.pk
-            )
+
+def new(request):
     return render(
         request,
         'subscriptions/subscription_form.html',
-        {'form': form}
+        {'form': SubscriptionForm()}
+    )
+
+
+def create(request):
+    form = SubscriptionForm(request.POST)
+    if not form.is_valid():
+        return render(
+            request,
+            'subscriptions/subscription_form.html',
+            {'form': form}
+        )
+
+    subscription = form.save()
+    return HttpResponseRedirect(
+        '/inscricao/%d/' % subscription.pk
     )
